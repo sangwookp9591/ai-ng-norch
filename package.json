@@ -1,0 +1,36 @@
+{
+  "name": "norch",
+  "version": "0.1.0",
+  "private": true,
+  "main": "electron/main.mjs",
+  "scripts": {
+    "dev": "next dev --turbopack --port 3819",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "server": "node server/norch-server.mjs",
+    "demo": "node server/demo.mjs",
+    "app": "npm run dev & sleep 2 && npx electron .",
+    "app:dev": "npx electron ."
+  },
+  "dependencies": {
+    "next": "16.2.1",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "ws": "^8.20.0",
+    "zustand": "^5.0.12"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "electron": "^34.5.8",
+    "electron-builder": "^26.8.1",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.1",
+    "menubar": "^9.5.2",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

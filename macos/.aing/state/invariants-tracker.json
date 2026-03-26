@@ -1,0 +1,31 @@
+{
+  "steps": 90,
+  "fileChanges": 23,
+  "errors": 0,
+  "startedAt": "2026-03-26T06:28:49.267Z",
+  "changedFiles": [
+    "/Users/iron/Project/norch/macos/norch/NorchContentView.swift",
+    "/Users/iron/Project/norch/macos/norch/AgentImage.swift",
+    "/Users/iron/Project/norch/macos/norch/NorchAppDelegate.swift",
+    "/Users/iron/Project/norch/macos/norch/NorchBarView.swift",
+    "/Users/iron/Project/ai-ng-claude/scripts/core/norch-bridge.mjs",
+    "/Users/iron/Project/ai-ng-claude/hooks-handlers/post-tool-use.mjs",
+    "/Users/iron/Project/ai-ng-claude/hooks-handlers/session-start.mjs",
+    "/Users/iron/Project/ai-ng-claude/hooks-handlers/stop.mjs",
+    "/Users/iron/Project/.aing/plans/2026-03-26-norch-remaining.md",
+    "/Users/iron/Project/norch/public/agents/jun.svg",
+    "/Users/iron/Project/norch/public/agents/simon.svg",
+    "/Users/iron/Project/norch/lib/types.ts",
+    "/Users/iron/Project/norch/lib/agents.ts",
+    "/Users/iron/Project/norch/app/page.tsx",
+    "/Users/iron/Project/norch/components/PdcaIndicator.tsx",
+    "/Users/iron/Project/norch/components/Office.tsx",
+    "/Users/iron/Project/norch/components/StatusBubble.tsx",
+    "/Users/iron/Project/norch/components/AgentDesk.tsx",
+    "/Users/iron/Project/norch/components/ActivityTimeline.tsx",
+    "/Users/iron/Project/norch/components/AgentDetailPanel.tsx",
+    "/Users/iron/Project/ai-ng-landing/components/NorchDownload.tsx",
+    "/Users/iron/Project/ai-ng-landing/app/page.tsx",
+    "/Users/iron/Project/ai-ng-claude/package.json"
+  ]
+}

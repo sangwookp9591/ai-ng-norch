@@ -1,0 +1,100 @@
+{"ts":"2026-03-26T04:55:41.851Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T05:01:37.852Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T05:14:06.368Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T05:17:55.210Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T05:28:18.470Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T05:28:33.322Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 51/50"}
+{"ts":"2026-03-26T05:28:39.374Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 52/50"}
+{"ts":"2026-03-26T05:29:09.442Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 53/50"}
+{"ts":"2026-03-26T05:29:14.991Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 54/50"}
+{"ts":"2026-03-26T05:41:32.470Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 55/50"}
+{"ts":"2026-03-26T05:41:45.177Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 56/50"}
+{"ts":"2026-03-26T05:41:58.167Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 57/50"}
+{"ts":"2026-03-26T05:42:08.448Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 58/50"}
+{"ts":"2026-03-26T05:43:50.835Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T05:44:36.694Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 59/50"}
+{"ts":"2026-03-26T05:44:52.191Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 60/50"}
+{"ts":"2026-03-26T05:45:05.978Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 61/50"}
+{"ts":"2026-03-26T05:45:20.848Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 62/50"}
+{"ts":"2026-03-26T05:45:31.976Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 63/50"}
+{"ts":"2026-03-26T05:46:35.781Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T05:46:45.902Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 64/50"}
+{"ts":"2026-03-26T05:47:09.838Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 65/50"}
+{"ts":"2026-03-26T05:47:21.293Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 66/50"}
+{"ts":"2026-03-26T05:47:55.826Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 67/50"}
+{"ts":"2026-03-26T05:48:08.673Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 68/50"}
+{"ts":"2026-03-26T05:57:38.586Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T05:57:57.969Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 69/50"}
+{"ts":"2026-03-26T05:57:57.970Z","level":"warn","module":"guardrail","msg":"Guardrail triggered: block-rm-rf","data":{"command":"pkill -f \"electron .\" 2>/dev/null; pkill -f \"next dev\" 2>/dev/null; lsof -ti:3819 | xargs kill -9 2>","severity":"critical"}}
+{"ts":"2026-03-26T05:58:54.342Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 70/50"}
+{"ts":"2026-03-26T05:59:08.961Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 71/50"}
+{"ts":"2026-03-26T05:59:32.915Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 72/50"}
+{"ts":"2026-03-26T05:59:48.216Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 73/50"}
+{"ts":"2026-03-26T05:59:57.409Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 74/50"}
+{"ts":"2026-03-26T06:00:45.302Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T06:00:58.878Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 75/50"}
+{"ts":"2026-03-26T06:01:18.796Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 76/50"}
+{"ts":"2026-03-26T06:01:41.222Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 77/50"}
+{"ts":"2026-03-26T06:02:02.475Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 78/50"}
+{"ts":"2026-03-26T06:02:15.019Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 79/50"}
+{"ts":"2026-03-26T06:02:22.807Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 80/50"}
+{"ts":"2026-03-26T06:02:37.786Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 81/50"}
+{"ts":"2026-03-26T06:02:47.140Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 82/50"}
+{"ts":"2026-03-26T06:03:03.750Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 83/50"}
+{"ts":"2026-03-26T06:03:34.735Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 84/50"}
+{"ts":"2026-03-26T06:04:05.960Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 85/50"}
+{"ts":"2026-03-26T06:04:29.288Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T06:04:43.691Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 86/50"}
+{"ts":"2026-03-26T06:04:52.864Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 87/50"}
+{"ts":"2026-03-26T06:05:08.298Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 88/50"}
+{"ts":"2026-03-26T06:05:20.061Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 89/50"}
+{"ts":"2026-03-26T06:05:37.678Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 90/50"}
+{"ts":"2026-03-26T06:06:08.286Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 91/50"}
+{"ts":"2026-03-26T06:06:33.652Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 92/50"}
+{"ts":"2026-03-26T06:06:58.165Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T06:07:42.423Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 93/50"}
+{"ts":"2026-03-26T06:08:03.304Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T06:08:17.527Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 94/50"}
+{"ts":"2026-03-26T06:08:32.831Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 95/50"}
+{"ts":"2026-03-26T06:11:44.560Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T06:14:47.675Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 96/50"}
+{"ts":"2026-03-26T06:15:24.344Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 97/50"}
+{"ts":"2026-03-26T06:15:45.445Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 98/50"}
+{"ts":"2026-03-26T06:16:00.092Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 99/50"}
+{"ts":"2026-03-26T06:16:11.093Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 100/50"}
+{"ts":"2026-03-26T06:21:57.379Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 101/50"}
+{"ts":"2026-03-26T06:31:25.823Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T06:31:39.982Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 102/50"}
+{"ts":"2026-03-26T06:31:49.909Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 103/50"}
+{"ts":"2026-03-26T06:31:57.201Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 104/50"}
+{"ts":"2026-03-26T06:32:04.765Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 105/50"}
+{"ts":"2026-03-26T06:32:23.572Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 106/50"}
+{"ts":"2026-03-26T06:32:38.777Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 107/50"}
+{"ts":"2026-03-26T06:35:02.961Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T06:35:15.333Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 108/50"}
+{"ts":"2026-03-26T06:35:29.927Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 109/50"}
+{"ts":"2026-03-26T06:35:44.506Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 110/50"}
+{"ts":"2026-03-26T06:40:49.514Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T06:40:59.832Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 111/50"}
+{"ts":"2026-03-26T06:41:21.198Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 112/50"}
+{"ts":"2026-03-26T06:41:35.108Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 113/50"}
+{"ts":"2026-03-26T06:41:50.030Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 114/50"}
+{"ts":"2026-03-26T06:42:46.075Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T06:42:54.302Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 115/50"}
+{"ts":"2026-03-26T06:43:16.210Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 116/50"}
+{"ts":"2026-03-26T06:43:30.796Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 117/50"}
+{"ts":"2026-03-26T06:44:32.186Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T06:44:39.361Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 118/50"}
+{"ts":"2026-03-26T06:44:53.772Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 119/50"}
+{"ts":"2026-03-26T06:45:02.056Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 120/50"}
+{"ts":"2026-03-26T07:20:05.376Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T07:20:59.690Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 121/50"}
+{"ts":"2026-03-26T07:21:20.746Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 122/50"}
+{"ts":"2026-03-26T07:21:29.014Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 123/50"}
+{"ts":"2026-03-26T07:21:50.764Z","level":"error","module":"safety-invariants","msg":"Step limit exceeded: 124/50"}
+{"ts":"2026-03-26T07:22:11.647Z","level":"info","module":"state-gc","msg":"GC: no zombies found"}
+{"ts":"2026-03-26T07:22:11.649Z","level":"info","module":"status-view","msg":"STATUS.md generated","data":{"featureCount":0,"zombieCount":0,"activeFeature":null}}
+{"ts":"2026-03-26T07:22:11.651Z","level":"info","module":"session-start","msg":"Session started","data":{"pdcaActive":false,"memoryLoaded":false}}
+{"ts":"2026-03-26T07:22:24.498Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T07:22:48.979Z","level":"warn","module":"guardrail","msg":"Guardrail triggered: block-rm-rf","data":{"command":"git rm -rf --cached .aing/ .omc/ swift/.build/ macos/build/ macos/.aing/ swift/.aing/ 2>&1","severity":"critical"}}
+{"ts":"2026-03-26T07:27:42.458Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}

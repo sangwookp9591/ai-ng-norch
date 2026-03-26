@@ -1,0 +1,9 @@
+node_modules/
+.next/
+out/
+macos/build/
+swift/.build/
+.DS_Store
+*.dmg
+.aing/
+.omc/
