@@ -1,7 +1,7 @@
 export type AgentName =
   | "Sam" | "Able" | "Klay" | "Jay" | "Jerry"
   | "Milla" | "Jun" | "Willji" | "Iron" | "Rowan"
-  | "Derek" | "Simon";
+  | "Derek" | "Simon" | "Progress-Checker" | "Figma-Reader";
 
 export type AgentState = "idle" | "working" | "waiting" | "error" | "done";
 
@@ -36,7 +36,11 @@ export interface NorchEvent {
     | "pdca-change"
     | "error"
     | "session-start"
-    | "session-end";
+    | "session-end"
+    | "review-pipeline"
+    | "ship-workflow"
+    | "cso-audit"
+    | "benchmark";
   sessionId: string;
   timestamp: number;
   agent?: {

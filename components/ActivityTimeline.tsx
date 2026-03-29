@@ -78,7 +78,7 @@ export default function ActivityTimeline() {
           전체
         </button>
         {Array.from(activeAgents).map((name) => {
-          const meta = AGENT_MAP.get(name);
+          const meta = AGENT_MAP[name];
           return (
             <button
               key={name}
@@ -106,7 +106,7 @@ export default function ActivityTimeline() {
           filtered.map((entry) => {
             const { event } = entry;
             const agentMeta = event.agent
-              ? AGENT_MAP.get(event.agent.name)
+              ? AGENT_MAP[event.agent.name]
               : null;
 
             return (

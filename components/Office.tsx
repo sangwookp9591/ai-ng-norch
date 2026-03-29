@@ -15,7 +15,7 @@ export default function Office({ onSelectAgent }: OfficeProps) {
   const sessionActive = useNorchStore((s) => s.sessionActive);
   const connected = useNorchStore((s) => s.connected);
 
-  const activeCount = Array.from(agents.values()).filter(
+  const activeCount = Object.values(agents).filter(
     (a) => a.state === "working"
   ).length;
 
@@ -51,8 +51,8 @@ export default function Office({ onSelectAgent }: OfficeProps) {
       <div className="space-y-3">
         <div className="grid grid-cols-6 gap-x-1 mx-auto">
           {OFFICE_ROW_1.map((name, i) => {
-            const meta = AGENT_MAP.get(name)!;
-            const status = agents.get(name)!;
+            const meta = AGENT_MAP[name];
+            const status = agents[name];
             return (
               <AgentDesk key={name} agent={meta} status={status} index={i} onSelect={onSelectAgent} />
             );
@@ -67,8 +67,8 @@ export default function Office({ onSelectAgent }: OfficeProps) {
 
         <div className="grid grid-cols-6 gap-x-1 mx-auto">
           {OFFICE_ROW_2.map((name, i) => {
-            const meta = AGENT_MAP.get(name)!;
-            const status = agents.get(name)!;
+            const meta = AGENT_MAP[name];
+            const status = agents[name];
             return (
               <AgentDesk key={name} agent={meta} status={status} index={i + 6} onSelect={onSelectAgent} />
             );

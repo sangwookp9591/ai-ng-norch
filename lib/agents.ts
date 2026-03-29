@@ -13,12 +13,14 @@ export const AGENTS: AgentMeta[] = [
   { name: "Rowan", icon: "/agents/rowan.svg", role: "모션", dept: "프론트", model: "sonnet", screenColor: "#a3e635" },
   { name: "Derek", icon: "/agents/derek.svg", role: "모바일", dept: "모바일", model: "sonnet", screenColor: "#22d3ee" },
   { name: "Simon", icon: "/agents/simon.svg", role: "코드분석", dept: "분석", model: "sonnet", screenColor: "#94a3b8" },
+  { name: "Progress-Checker", icon: "/agents/progress-checker.svg", role: "진행점검", dept: "분석", model: "sonnet", screenColor: "#cbd5e1" },
+  { name: "Figma-Reader", icon: "/agents/figma-reader.svg", role: "피그마분석", dept: "디자인", model: "sonnet", screenColor: "#c084fc" },
 ];
 
-export const AGENT_MAP = new Map<AgentName, AgentMeta>(
+export const AGENT_MAP: Record<string, AgentMeta> = Object.fromEntries(
   AGENTS.map((a) => [a.name, a])
 );
 
 /** Office grid layout: row 1 (management + design), row 2 (backend + frontend) */
-export const OFFICE_ROW_1: AgentName[] = ["Sam", "Able", "Klay", "Willji", "Iron", "Rowan"];
-export const OFFICE_ROW_2: AgentName[] = ["Jay", "Jerry", "Milla", "Jun", "Derek", "Simon"];
+export const OFFICE_ROW_1: AgentName[] = ["Sam", "Able", "Klay", "Willji", "Iron", "Rowan", "Figma-Reader"];
+export const OFFICE_ROW_2: AgentName[] = ["Jay", "Jerry", "Milla", "Jun", "Derek", "Simon", "Progress-Checker"];

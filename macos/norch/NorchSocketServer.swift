@@ -1,99 +1,69 @@
 import Foundation
 
-/// Unix socket server that receives events from aing hooks
+/// WebSocket client that receives events from the bundled norch relay server.
+/// (Previously a Unix socket server — now the Node.js process owns /tmp/norch.sock.)
 final class NorchSocketServer {
     static let shared = NorchSocketServer()
-    private let socketPath = "/tmp/norch.sock"
-    private var serverSocket: Int32 = -1
+
+    private var wsTask: URLSessionWebSocketTask?
     private var isRunning = false
+    private let wsURL = URL(string: "ws://localhost:4819")!
 
     func start() {
-        // Clean up old socket
-        unlink(socketPath)
-
-        serverSocket = socket(AF_UNIX, SOCK_STREAM, 0)
-        guard serverSocket >= 0 else {
-            NSLog("[norch] Failed to create socket")
-            return
-        }
-
-        var addr = sockaddr_un()
-        addr.sun_family = sa_family_t(AF_UNIX)
-        withUnsafeMutablePointer(to: &addr.sun_path) { ptr in
-            let buf = UnsafeMutableRawPointer(ptr).bindMemory(to: CChar.self, capacity: 104)
-            socketPath.withCString { src in
-                _ = strcpy(buf, src)
-            }
-        }
-
-        let bindResult = withUnsafePointer(to: &addr) { ptr in
-            ptr.withMemoryRebound(to: sockaddr.self, capacity: 1) { sockPtr in
-                bind(serverSocket, sockPtr, socklen_t(MemoryLayout<sockaddr_un>.size))
-            }
-        }
-
-        guard bindResult == 0 else {
-            NSLog("[norch] Failed to bind socket: %d", errno)
-            return
-        }
-
-        listen(serverSocket, 5)
         isRunning = true
-        NSLog("[norch] Socket server listening on %@", socketPath)
-
-        DispatchQueue.global(qos: .background).async { [weak self] in
-            self?.acceptLoop()
-        }
-    }
-
-    private func acceptLoop() {
-        while isRunning {
-            var clientAddr = sockaddr_un()
-            var addrLen = socklen_t(MemoryLayout<sockaddr_un>.size)
-
-            let clientSocket = withUnsafeMutablePointer(to: &clientAddr) { ptr in
-                ptr.withMemoryRebound(to: sockaddr.self, capacity: 1) { sockPtr in
-                    accept(serverSocket, sockPtr, &addrLen)
-                }
-            }
-
-            guard clientSocket >= 0 else { continue }
-
-            DispatchQueue.global(qos: .utility).async { [weak self] in
-                self?.handleClient(clientSocket)
-            }
-        }
-    }
-
-    private func handleClient(_ socket: Int32) {
-        var buffer = [UInt8](repeating: 0, count: 8192)
-        var accumulated = ""
-
-        while true {
-            let bytesRead = read(socket, &buffer, buffer.count)
-            if bytesRead <= 0 { break }
-
-            accumulated += String(bytes: buffer[0..<bytesRead], encoding: .utf8) ?? ""
-
-            while let newlineIdx = accumulated.firstIndex(of: "\n") {
-                let line = String(accumulated[accumulated.startIndex..<newlineIdx]).trimmingCharacters(in: .whitespaces)
-                accumulated = String(accumulated[accumulated.index(after: newlineIdx)...])
-
-                if !line.isEmpty, let data = line.data(using: .utf8),
-                   let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] {
-                    DispatchQueue.main.async {
-                        NorchState.shared.handleEvent(json)
-                    }
-                }
-            }
-        }
-
-        close(socket)
+        connect()
     }
 
     func stop() {
         isRunning = false
-        if serverSocket >= 0 { close(serverSocket) }
-        unlink(socketPath)
+        wsTask?.cancel(with: .goingAway, reason: nil)
+        wsTask = nil
+    }
+
+    // MARK: - Private
+
+    private func connect() {
+        guard isRunning else { return }
+
+        wsTask?.cancel(with: .goingAway, reason: nil)
+        wsTask = URLSession.shared.webSocketTask(with: wsURL)
+        wsTask?.resume()
+        receiveNext()
+    }
+
+    private func receiveNext() {
+        wsTask?.receive { [weak self] result in
+            guard let self, self.isRunning else { return }
+
+            switch result {
+            case .success(let message):
+                switch message {
+                case .string(let text):
+                    self.handleMessage(text)
+                case .data(let data):
+                    if let text = String(data: data, encoding: .utf8) {
+                        self.handleMessage(text)
+                    }
+                @unknown default:
+                    break
+                }
+                self.receiveNext()
+
+            case .failure:
+                // Reconnect after a delay
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+                    self?.connect()
+                }
+            }
+        }
+    }
+
+    private func handleMessage(_ text: String) {
+        guard let data = text.data(using: .utf8),
+              let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else { return }
+
+        DispatchQueue.main.async {
+            NorchState.shared.handleEvent(json)
+        }
     }
 }

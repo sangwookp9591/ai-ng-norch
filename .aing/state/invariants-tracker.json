@@ -1,11 +1,16 @@
 {
-  "steps": 13,
-  "fileChanges": 3,
+  "steps": 21,
+  "fileChanges": 8,
   "errors": 0,
   "changedFiles": [
-    "/Users/iron/Project/norch/.gitignore",
-    "/Users/iron/Project/ai-ng-claude/scripts/pdca/pdca-engine.mjs",
-    "/Users/iron/Project/norch/macos/scripts/build-dmg.sh"
+    "/Users/iron/.claude/hooks/norch-agent-hook.mjs",
+    "/Users/iron/.claude/settings.json",
+    "/Users/iron/.claude/plugins/marketplaces/aing-marketplace/scripts/agent-ui/norch-notify.mjs",
+    "/Users/iron/.claude/plugins/marketplaces/aing-marketplace/hooks-handlers/pre-tool-use.mjs",
+    "/Users/iron/.claude/plugins/marketplaces/aing-marketplace/hooks-handlers/post-tool-use.mjs",
+    "/Users/iron/.claude/plugins/marketplaces/aing-marketplace/package.json",
+    "/Users/iron/.claude/plugins/marketplaces/aing-marketplace/.claude-plugin/plugin.json",
+    "/Users/iron/.claude/plugins/marketplaces/aing-marketplace/hooks/hooks.json"
   ],
-  "startedAt": "2026-03-26T07:22:11.643Z"
+  "startedAt": "2026-03-27T05:46:41.382Z"
 }

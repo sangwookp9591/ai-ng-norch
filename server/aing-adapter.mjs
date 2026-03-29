@@ -46,16 +46,20 @@ function sendEvent(event) {
  * Falls back to generic if agent name not recognized.
  */
 const AGENT_LOOKUP = {
-  sam: { name: "Sam", role: "CTO", model: "opus" },
-  able: { name: "Able", role: "기획", model: "sonnet" },
+  sam: { name: "Sam", role: "CTO / Boil the Lake", model: "opus" },
+  able: { name: "Able", role: "기획 / Office Hours 6-question", model: "sonnet" },
   klay: { name: "Klay", role: "설계", model: "opus" },
   jay: { name: "Jay", role: "API", model: "sonnet" },
   jerry: { name: "Jerry", role: "DB", model: "sonnet" },
-  milla: { name: "Milla", role: "보안", model: "sonnet" },
-  willji: { name: "Willji", role: "디자인", model: "sonnet" },
-  derek: { name: "Derek", role: "화면", model: "sonnet" },
+  milla: { name: "Milla", role: "보안 / CSO 14-phase 보안 감사", model: "sonnet" },
+  jun: { name: "Jun", role: "성능", model: "sonnet" },
+  willji: { name: "Willji", role: "디자인 / AI Slop Detection", model: "sonnet" },
+  iron: { name: "Iron", role: "화면", model: "sonnet" },
   rowan: { name: "Rowan", role: "모션", model: "sonnet" },
-  iron: { name: "Iron", role: "마법사", model: "sonnet" },
+  derek: { name: "Derek", role: "모바일", model: "sonnet" },
+  simon: { name: "Simon", role: "코드분석", model: "sonnet" },
+  "progress-checker": { name: "Progress-Checker", role: "진행점검", model: "sonnet" },
+  "figma-reader": { name: "Figma-Reader", role: "피그마분석", model: "sonnet" },
 };
 
 function resolveAgent(nameOrType) {
@@ -127,6 +131,53 @@ export const notifyNorch = {
       type: "error",
       sessionId: sessionId ?? "unknown",
       agent,
+      message,
+    });
+  },
+
+  reviewPipeline(sessionId, { tier, reviewer, status, message }) {
+    sendEvent({
+      type: "review-pipeline",
+      sessionId: sessionId ?? "unknown",
+      agent: resolveAgent(reviewer),
+      review: { tier, status },
+      message,
+    });
+  },
+
+  shipStart(sessionId, message) {
+    sendEvent({
+      type: "ship-workflow",
+      sessionId: sessionId ?? "unknown",
+      ship: { step: "start" },
+      message: message ?? "Ship 워크플로우 시작",
+    });
+  },
+
+  shipStep(sessionId, step, message) {
+    sendEvent({
+      type: "ship-workflow",
+      sessionId: sessionId ?? "unknown",
+      ship: { step },
+      message,
+    });
+  },
+
+  shipComplete(sessionId, message) {
+    sendEvent({
+      type: "ship-workflow",
+      sessionId: sessionId ?? "unknown",
+      ship: { step: "complete" },
+      message: message ?? "Ship 완료",
+    });
+  },
+
+  csoAudit(sessionId, { phase, finding, severity, message }) {
+    sendEvent({
+      type: "cso-audit",
+      sessionId: sessionId ?? "unknown",
+      agent: resolveAgent("milla"),
+      audit: { phase, finding, severity },
       message,
     });
   },

@@ -13,16 +13,20 @@ import { connect } from "net";
 const UNIX_SOCK = "/tmp/norch.sock";
 
 const AGENTS = [
-  { name: "Sam", role: "CTO", model: "opus" },
-  { name: "Able", role: "기획", model: "sonnet" },
+  { name: "Sam", role: "CTO / Boil the Lake", model: "opus" },
+  { name: "Able", role: "기획 / Office Hours 6-question", model: "sonnet" },
   { name: "Klay", role: "설계", model: "opus" },
   { name: "Jay", role: "API", model: "sonnet" },
   { name: "Jerry", role: "DB", model: "sonnet" },
-  { name: "Milla", role: "보안", model: "sonnet" },
-  { name: "Willji", role: "디자인", model: "sonnet" },
-  { name: "Derek", role: "화면", model: "sonnet" },
+  { name: "Milla", role: "보안 / CSO 14-phase 보안 감사", model: "sonnet" },
+  { name: "Jun", role: "성능", model: "sonnet" },
+  { name: "Willji", role: "디자인 / AI Slop Detection", model: "sonnet" },
+  { name: "Iron", role: "화면", model: "sonnet" },
   { name: "Rowan", role: "모션", model: "sonnet" },
-  { name: "Iron", role: "마법사", model: "sonnet" },
+  { name: "Derek", role: "모바일", model: "sonnet" },
+  { name: "Simon", role: "코드분석", model: "sonnet" },
+  { name: "Progress-Checker", role: "진행점검", model: "sonnet" },
+  { name: "Figma-Reader", role: "피그마분석", model: "sonnet" },
 ];
 
 const TOOLS = ["Read", "Write", "Edit", "Bash", "Grep", "Glob", "Agent"];

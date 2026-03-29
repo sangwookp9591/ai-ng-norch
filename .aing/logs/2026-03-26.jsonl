@@ -98,3 +98,21 @@
 {"ts":"2026-03-26T07:22:24.498Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
 {"ts":"2026-03-26T07:22:48.979Z","level":"warn","module":"guardrail","msg":"Guardrail triggered: block-rm-rf","data":{"command":"git rm -rf --cached .aing/ .omc/ swift/.build/ macos/build/ macos/.aing/ swift/.aing/ 2>&1","severity":"critical"}}
 {"ts":"2026-03-26T07:27:42.458Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T08:17:20.605Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T08:57:53.342Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T08:58:40.439Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T08:59:53.931Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T09:00:51.784Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"full","complexity":"high","workers":7}}
+{"ts":"2026-03-26T09:04:50.033Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"squad","complexity":"mid","workers":4}}
+{"ts":"2026-03-26T09:08:59.648Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T09:09:34.050Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T09:10:48.136Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T09:12:07.470Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T09:12:19.447Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T09:14:32.264Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T09:15:37.894Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T09:19:36.934Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T09:21:48.157Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"full","complexity":"high","workers":7}}
+{"ts":"2026-03-26T09:21:57.898Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T10:02:44.427Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}
+{"ts":"2026-03-26T10:30:45.297Z","level":"info","module":"team","msg":"Team selected","data":{"preset":"solo","complexity":"low","workers":1}}

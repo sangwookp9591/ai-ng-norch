@@ -16,7 +16,17 @@ final class NorchAppDelegate: NSObject, NSApplicationDelegate {
         NSApp.setActivationPolicy(.accessory)
         setupPanel()
         observeNotifications()
-        NorchSocketServer.shared.start()
+
+        // Start bundled Node.js server, then connect WS client for events
+        NorchProcessManager.shared.start()
+        NorchProcessManager.shared.waitForReady { _ in
+            NorchSocketServer.shared.start()
+        }
+    }
+
+    func applicationWillTerminate(_ notification: Notification) {
+        NorchSocketServer.shared.stop()
+        NorchProcessManager.shared.stop()
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool { false }
@@ -79,14 +89,19 @@ final class NorchAppDelegate: NSObject, NSApplicationDelegate {
         guard isExpanded, let panel else { return }
         isExpanded = false
 
-        // WebView 제거
+        // 1. 즉시: WebView 제거 + 배경 투명 + 바 뷰 복원
         webView?.removeFromSuperview()
         webView = nil
+        panel.backgroundColor = .clear
+        panel.hasShadow = false
 
+        let barView = NSHostingView(rootView: NorchBarView())
+        barView.layer?.backgroundColor = .clear
+        panel.contentView = barView
+
+        // 2. 크기 축소 애니메이션
         let screen = builtInScreen()
         let sf = screen.frame
-
-        panel.hasShadow = false
 
         NSAnimationContext.runAnimationGroup { ctx in
             ctx.duration = 0.25
@@ -95,14 +110,6 @@ final class NorchAppDelegate: NSObject, NSApplicationDelegate {
                 NSRect(x: sf.origin.x, y: sf.maxY - collapsedHeight, width: sf.width, height: collapsedHeight),
                 display: true
             )
-        }
-
-        // 바 뷰 복원
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
-            guard let self, let panel = self.panel, !self.isExpanded else { return }
-            let view = NSHostingView(rootView: NorchBarView())
-            view.layer?.backgroundColor = .clear
-            panel.contentView = view
         }
     }
 
@@ -144,6 +151,22 @@ final class NorchAppDelegate: NSObject, NSApplicationDelegate {
 
         NotificationCenter.default.addObserver(forName: NSApplication.didChangeScreenParametersNotification, object: nil, queue: .main) { [weak self] _ in
             MainActor.assumeIsolated { self?.repositionPanel() }
+        }
+
+        // ESC로 닫기
+        NSEvent.addLocalMonitorForEvents(matching: .keyDown) { [weak self] event in
+            if event.keyCode == 53, self?.isExpanded == true {
+                MainActor.assumeIsolated { self?.collapse() }
+                return nil
+            }
+            return event
+        }
+
+        // 바깥 클릭으로 닫기
+        NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown]) { [weak self] _ in
+            MainActor.assumeIsolated {
+                if self?.isExpanded == true { self?.collapse() }
+            }
         }
     }
 

@@ -5,6 +5,20 @@ import { useNorchStore } from "@/lib/store";
 import { AGENTS } from "@/lib/agents";
 import type { AgentMeta } from "@/lib/types";
 
+declare global {
+  interface Window {
+    norch?: {
+      toggle: () => void;
+      collapse: () => void;
+      mouseEnter: () => void;
+      mouseLeave: () => void;
+      onExpand: (cb: (expanded: boolean) => void) => void;
+      onEvent: (cb: (event: unknown) => void) => void;
+    };
+    webkit?: { messageHandlers: { norch: { postMessage: (msg: string) => void } } };
+  }
+}
+
 const SPRITE_SIZE = 36;
 
 export default function NotchBar({ onExpand }: { onExpand: () => void }) {
@@ -16,7 +30,7 @@ export default function NotchBar({ onExpand }: { onExpand: () => void }) {
   const rightAgents = AGENTS.slice(5, 10);
 
   const pickSentinel = (list: AgentMeta[]) => {
-    const working = list.find((a) => agents.get(a.name)?.state === "working");
+    const working = list.find((a) => agents[a.name]?.state === "working");
     return working ?? list[0];
   };
 
@@ -80,7 +94,7 @@ function Panel({
       }}
     >
       {agents.map((agent) => {
-        const status = statuses.get(agent.name);
+        const status = statuses[agent.name];
         const isWorking = status?.state === "working";
 
         return (

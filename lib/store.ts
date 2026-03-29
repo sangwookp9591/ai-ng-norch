@@ -6,32 +6,28 @@ import { AGENTS } from "./agents";
 
 const MAX_TIMELINE = 200;
 
+type AgentMap = Record<string, AgentStatus>;
+
 interface NorchStore {
-  /** Per-agent status */
-  agents: Map<AgentName, AgentStatus>;
-  /** Event timeline (newest first) */
+  agents: AgentMap;
   timeline: TimelineEntry[];
-  /** Current PDCA phase */
   pdcaPhase: PdcaPhase | null;
-  /** Session active */
   sessionActive: boolean;
-  /** Connection status */
   connected: boolean;
 
-  /** Actions */
   processEvent: (event: NorchEvent) => void;
   setConnected: (connected: boolean) => void;
   reset: () => void;
 }
 
-function makeInitialAgents(): Map<AgentName, AgentStatus> {
-  const map = new Map<AgentName, AgentStatus>();
+function makeInitialAgents(): AgentMap {
+  const map: AgentMap = {};
   for (const agent of AGENTS) {
-    map.set(agent.name, {
+    map[agent.name] = {
       name: agent.name,
       state: "idle",
       updatedAt: Date.now(),
-    });
+    };
   }
   return map;
 }
@@ -55,14 +51,12 @@ export const useNorchStore = create<NorchStore>((set) => ({
 
   processEvent: (event) =>
     set((state) => {
-      const agents = new Map(state.agents);
+      const agents = { ...state.agents };
       let { pdcaPhase, sessionActive } = state;
 
-      // Update agent state based on event type
       if (event.agent) {
         const name = event.agent.name;
-        const existing = agents.get(name);
-        const base: AgentStatus = existing ?? {
+        const base: AgentStatus = agents[name] ?? {
           name,
           state: "idle",
           updatedAt: Date.now(),
@@ -72,6 +66,7 @@ export const useNorchStore = create<NorchStore>((set) => ({
         switch (event.type) {
           case "agent-spawn":
           case "agent-working":
+          case "tool-use":
             newState = "working";
             break;
           case "agent-idle":
@@ -81,12 +76,9 @@ export const useNorchStore = create<NorchStore>((set) => ({
           case "error":
             newState = "error";
             break;
-          case "tool-use":
-            newState = "working";
-            break;
         }
 
-        agents.set(name, {
+        agents[name] = {
           ...base,
           state: newState,
           currentTool: event.tool?.name ?? base.currentTool,
@@ -94,19 +86,15 @@ export const useNorchStore = create<NorchStore>((set) => ({
           message: event.message ?? base.message,
           startedAt: newState === "working" && base.state !== "working" ? Date.now() : base.startedAt,
           updatedAt: Date.now(),
-        });
+        };
       }
 
-      // PDCA phase change
       if (event.type === "pdca-change" && event.pdca) {
         pdcaPhase = event.pdca.phase;
       }
-
-      // Session lifecycle
       if (event.type === "session-start") sessionActive = true;
       if (event.type === "session-end") sessionActive = false;
 
-      // Add to timeline
       const entry: TimelineEntry = {
         id: `${event.timestamp}-${Math.random().toString(36).slice(2, 8)}`,
         event,

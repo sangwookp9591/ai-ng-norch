@@ -18,11 +18,10 @@ function formatDuration(ms: number): string {
 }
 
 export default function AgentDetailPanel({ agentName, onClose }: AgentDetailPanelProps) {
-  const status = useNorchStore((s) => s.agents.get(agentName));
-  const timeline = useNorchStore((s) =>
-    s.timeline.filter((e) => e.event.agent?.name === agentName)
-  );
-  const meta = AGENT_MAP.get(agentName);
+  const status = useNorchStore((s) => s.agents[agentName]);
+  const allTimeline = useNorchStore((s) => s.timeline);
+  const timeline = allTimeline.filter((e) => e.event.agent?.name === agentName);
+  const meta = AGENT_MAP[agentName];
 
   if (!status || !meta) return null;
 
