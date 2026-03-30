@@ -24,7 +24,8 @@ const AGENTS = [
   { name: "Iron", role: "화면", model: "sonnet" },
   { name: "Rowan", role: "모션", model: "sonnet" },
   { name: "Derek", role: "모바일", model: "sonnet" },
-  { name: "Simon", role: "코드분석", model: "sonnet" },
+  { name: "Simon", role: "CEO / 제품 전략", model: "opus" },
+  { name: "Kain", role: "코드분석 / 정적 분석", model: "sonnet" },
   { name: "Progress-Checker", role: "진행점검", model: "sonnet" },
   { name: "Figma-Reader", role: "피그마분석", model: "sonnet" },
 ];

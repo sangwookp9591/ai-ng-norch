@@ -57,7 +57,8 @@ const AGENT_LOOKUP = {
   iron: { name: "Iron", role: "화면", model: "sonnet" },
   rowan: { name: "Rowan", role: "모션", model: "sonnet" },
   derek: { name: "Derek", role: "모바일", model: "sonnet" },
-  simon: { name: "Simon", role: "코드분석", model: "sonnet" },
+  simon: { name: "Simon", role: "CEO / 제품 전략", model: "opus" },
+  kain: { name: "Kain", role: "코드분석 / 정적 분석", model: "sonnet" },
   "progress-checker": { name: "Progress-Checker", role: "진행점검", model: "sonnet" },
   "figma-reader": { name: "Figma-Reader", role: "피그마분석", model: "sonnet" },
 };

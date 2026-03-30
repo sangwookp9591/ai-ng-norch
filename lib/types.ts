@@ -1,7 +1,7 @@
 export type AgentName =
   | "Sam" | "Able" | "Klay" | "Jay" | "Jerry"
   | "Milla" | "Jun" | "Willji" | "Iron" | "Rowan"
-  | "Derek" | "Simon" | "Progress-Checker" | "Figma-Reader";
+  | "Derek" | "Simon" | "Kain" | "Progress-Checker" | "Figma-Reader";
 
 export type AgentState = "idle" | "working" | "waiting" | "error" | "done";
 
