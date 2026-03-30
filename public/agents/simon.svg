@@ -1,53 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 16 16">
-<!-- Simon: 한국 파마머리 + 동그란 안경, 코드분석 담당, 슬레이트 컬러 -->
-<!-- Perm hair - curly/wavy brown-black, volume on top and sides -->
-<rect x="4" y="0" width="2" height="1" fill="#3f3f46"/>
-<rect x="6" y="0" width="4" height="1" fill="#52525b"/>
-<rect x="10" y="0" width="2" height="1" fill="#3f3f46"/>
-<rect x="3" y="1" width="2" height="1" fill="#52525b"/>
-<rect x="5" y="1" width="6" height="1" fill="#3f3f46"/>
-<rect x="11" y="1" width="2" height="1" fill="#52525b"/>
-<!-- Perm texture bumps -->
-<rect x="3" y="0" width="1" height="1" fill="#52525b"/>
-<rect x="12" y="0" width="1" height="1" fill="#52525b"/>
-<rect x="2" y="2" width="1" height="2" fill="#3f3f46"/>
-<rect x="13" y="2" width="1" height="2" fill="#3f3f46"/>
-<!-- Hair sides -->
-<rect x="3" y="2" width="10" height="1" fill="#3f3f46"/>
-<!-- Face -->
-<rect x="3" y="3" width="10" height="1" fill="#f0c8a0"/>
-<rect x="3" y="4" width="10" height="1" fill="#f0c8a0"/>
-<!-- Round glasses frame -->
-<rect x="4" y="3" width="3" height="2" fill="none" stroke="#71717a" stroke-width="0.3"/>
-<rect x="9" y="3" width="3" height="2" fill="none" stroke="#71717a" stroke-width="0.3"/>
-<!-- Glasses rendered as pixels -->
-<rect x="4" y="3" width="1" height="1" fill="#71717a"/>
-<rect x="5" y="3" width="1" height="1" fill="#a1a1aa"/>
-<rect x="6" y="3" width="1" height="1" fill="#71717a"/>
-<rect x="7" y="3" width="2" height="1" fill="#71717a"/>
-<rect x="9" y="3" width="1" height="1" fill="#71717a"/>
-<rect x="10" y="3" width="1" height="1" fill="#a1a1aa"/>
-<rect x="11" y="3" width="1" height="1" fill="#71717a"/>
-<!-- Eyes behind glasses - dark -->
-<rect x="5" y="4" width="1" height="1" fill="#27272a"/>
-<rect x="10" y="4" width="1" height="1" fill="#27272a"/>
-<!-- Glasses bottom -->
-<rect x="4" y="5" width="3" height="1" fill="#71717a"/>
-<rect x="9" y="5" width="3" height="1" fill="#71717a"/>
-<!-- Lower face -->
-<rect x="3" y="5" width="1" height="1" fill="#f0c8a0"/>
-<rect x="7" y="5" width="2" height="1" fill="#f0c8a0"/>
-<rect x="12" y="5" width="1" height="1" fill="#f0c8a0"/>
-<rect x="4" y="6" width="8" height="1" fill="#f0c8a0"/>
-<!-- Mouth -->
-<rect x="7" y="6" width="2" height="1" fill="#e8a888"/>
-<!-- Neck -->
-<rect x="6" y="7" width="4" height="1" fill="#f0c8a0"/>
-<!-- Shirt - slate (코드분석=분석적=슬레이트) -->
-<rect x="3" y="8" width="10" height="1" fill="#94a3b8"/>
-<rect x="3" y="9" width="10" height="2" fill="#64748b"/>
-<rect x="7" y="8" width="2" height="1" fill="#475569"/>
-<!-- Legs -->
-<rect x="4" y="11" width="3" height="2" fill="#374151"/>
-<rect x="9" y="11" width="3" height="2" fill="#374151"/>
+<!-- Simon: CEO - sharp suit, slicked hair, confident posture - navy/gold -->
+<rect x="4" y="0" width="8" height="1" fill="#1e293b"/>
+<rect x="3" y="1" width="10" height="1" fill="#1e293b"/>
+<rect x="3" y="2" width="10" height="1" fill="#1e293b"/>
+<rect x="3" y="3" width="10" height="1" fill="#fcd9b6"/>
+<rect x="3" y="4" width="10" height="1" fill="#fcd9b6"/>
+<rect x="5" y="4" width="1" height="1" fill="#fff"/>
+<rect x="6" y="4" width="1" height="1" fill="#1e293b"/>
+<rect x="9" y="4" width="1" height="1" fill="#fff"/>
+<rect x="10" y="4" width="1" height="1" fill="#1e293b"/>
+<rect x="3" y="5" width="10" height="1" fill="#fcd9b6"/>
+<rect x="7" y="5" width="2" height="1" fill="#0f172a"/>
+<rect x="3" y="6" width="10" height="1" fill="#fcd9b6"/>
+<rect x="6" y="6" width="4" height="1" fill="#fca5a5"/>
+<rect x="4" y="7" width="8" height="1" fill="#fcd9b6"/>
+<rect x="5" y="8" width="6" height="1" fill="#fcd9b6"/>
+<rect x="3" y="9" width="10" height="1" fill="#1e3a5f"/>
+<rect x="7" y="9" width="2" height="1" fill="#f59e0b"/>
+<rect x="3" y="10" width="10" height="2" fill="#1e3a5f"/>
+<rect x="7" y="10" width="2" height="1" fill="#fbbf24"/>
+<rect x="4" y="12" width="3" height="2" fill="#334155"/>
+<rect x="9" y="12" width="3" height="2" fill="#334155"/>
 </svg>
