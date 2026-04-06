@@ -13,21 +13,27 @@ import { connect } from "net";
 const UNIX_SOCK = "/tmp/norch.sock";
 
 const AGENTS = [
-  { name: "Sam", role: "CTO / Boil the Lake", model: "opus" },
-  { name: "Able", role: "기획 / Office Hours 6-question", model: "sonnet" },
+  { name: "Sam", role: "CTO", model: "opus" },
+  { name: "Simon", role: "CEO / 제품 전략", model: "opus" },
+  { name: "Able", role: "기획", model: "sonnet" },
   { name: "Klay", role: "설계", model: "opus" },
+  { name: "Ryan", role: "원칙 도출", model: "sonnet" },
+  { name: "Noa", role: "합의 검증", model: "sonnet" },
+  { name: "Critic", role: "심의 비평", model: "opus" },
   { name: "Jay", role: "API", model: "sonnet" },
   { name: "Jerry", role: "DB", model: "sonnet" },
-  { name: "Milla", role: "보안 / CSO 14-phase 보안 감사", model: "sonnet" },
+  { name: "Milla", role: "보안", model: "sonnet" },
   { name: "Jun", role: "성능", model: "sonnet" },
-  { name: "Willji", role: "디자인 / AI Slop Detection", model: "sonnet" },
+  { name: "Kain", role: "코드분석", model: "sonnet" },
+  { name: "Willji", role: "디자인", model: "sonnet" },
   { name: "Iron", role: "화면", model: "sonnet" },
   { name: "Rowan", role: "모션", model: "sonnet" },
   { name: "Derek", role: "모바일", model: "sonnet" },
-  { name: "Simon", role: "CEO / 제품 전략", model: "opus" },
-  { name: "Kain", role: "코드분석 / 정적 분석", model: "sonnet" },
-  { name: "Progress-Checker", role: "진행점검", model: "sonnet" },
-  { name: "Figma-Reader", role: "피그마분석", model: "sonnet" },
+  { name: "Hugg", role: "AI 모델 리서치", model: "sonnet" },
+  { name: "Jo", role: "AI 구현", model: "sonnet" },
+  { name: "Teacher", role: "교육", model: "sonnet" },
+  { name: "Progress-Checker", role: "진행도 분석", model: "sonnet" },
+  { name: "Figma-Reader", role: "Figma 분석", model: "sonnet" },
 ];
 
 const TOOLS = ["Read", "Write", "Edit", "Bash", "Grep", "Glob", "Agent"];

@@ -46,21 +46,27 @@ function sendEvent(event) {
  * Falls back to generic if agent name not recognized.
  */
 const AGENT_LOOKUP = {
-  sam: { name: "Sam", role: "CTO / Boil the Lake", model: "opus" },
-  able: { name: "Able", role: "기획 / Office Hours 6-question", model: "sonnet" },
+  sam: { name: "Sam", role: "CTO", model: "opus" },
+  simon: { name: "Simon", role: "CEO / 제품 전략", model: "opus" },
+  able: { name: "Able", role: "기획", model: "sonnet" },
   klay: { name: "Klay", role: "설계", model: "opus" },
+  ryan: { name: "Ryan", role: "원칙 도출", model: "sonnet" },
+  noa: { name: "Noa", role: "합의 검증", model: "sonnet" },
+  critic: { name: "Critic", role: "심의 비평", model: "opus" },
   jay: { name: "Jay", role: "API", model: "sonnet" },
   jerry: { name: "Jerry", role: "DB", model: "sonnet" },
-  milla: { name: "Milla", role: "보안 / CSO 14-phase 보안 감사", model: "sonnet" },
+  milla: { name: "Milla", role: "보안", model: "sonnet" },
   jun: { name: "Jun", role: "성능", model: "sonnet" },
-  willji: { name: "Willji", role: "디자인 / AI Slop Detection", model: "sonnet" },
+  kain: { name: "Kain", role: "코드분석", model: "sonnet" },
+  willji: { name: "Willji", role: "디자인", model: "sonnet" },
   iron: { name: "Iron", role: "화면", model: "sonnet" },
   rowan: { name: "Rowan", role: "모션", model: "sonnet" },
   derek: { name: "Derek", role: "모바일", model: "sonnet" },
-  simon: { name: "Simon", role: "CEO / 제품 전략", model: "opus" },
-  kain: { name: "Kain", role: "코드분석 / 정적 분석", model: "sonnet" },
-  "progress-checker": { name: "Progress-Checker", role: "진행점검", model: "sonnet" },
-  "figma-reader": { name: "Figma-Reader", role: "피그마분석", model: "sonnet" },
+  hugg: { name: "Hugg", role: "AI 모델 리서치", model: "sonnet" },
+  jo: { name: "Jo", role: "AI 구현", model: "sonnet" },
+  teacher: { name: "Teacher", role: "교육", model: "sonnet" },
+  "progress-checker": { name: "Progress-Checker", role: "진행도 분석", model: "sonnet" },
+  "figma-reader": { name: "Figma-Reader", role: "Figma 분석", model: "sonnet" },
 };
 
 function resolveAgent(nameOrType) {

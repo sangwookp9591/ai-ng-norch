@@ -1,7 +1,7 @@
 "use client";
 
 import { useNorchStore } from "@/lib/store";
-import { AGENT_MAP, OFFICE_ROW_1, OFFICE_ROW_2 } from "@/lib/agents";
+import { AGENT_MAP, OFFICE_ROW_1, OFFICE_ROW_2, OFFICE_ROW_3 } from "@/lib/agents";
 import AgentDesk from "./AgentDesk";
 import PdcaIndicator from "./PdcaIndicator";
 
@@ -38,7 +38,7 @@ export default function Office({ onSelectAgent }: OfficeProps) {
             <span className="text-[9px] font-mono text-zinc-500">
               {connected
                 ? sessionActive
-                  ? `${activeCount}/${OFFICE_ROW_1.length + OFFICE_ROW_2.length}`
+                  ? `${activeCount}/${OFFICE_ROW_1.length + OFFICE_ROW_2.length + OFFICE_ROW_3.length}`
                   : "idle"
                 : "offline"}
             </span>
@@ -47,9 +47,9 @@ export default function Office({ onSelectAgent }: OfficeProps) {
         <PdcaIndicator currentPhase={pdcaPhase} />
       </div>
 
-      {/* Office grid — 6 columns, 2 rows */}
+      {/* Office grid — 7 columns, 3 rows */}
       <div className="space-y-3">
-        <div className="grid grid-cols-6 gap-x-1 mx-auto">
+        <div className="grid grid-cols-7 gap-x-1 mx-auto">
           {OFFICE_ROW_1.map((name, i) => {
             const meta = AGENT_MAP[name];
             const status = agents[name];
@@ -65,12 +65,28 @@ export default function Office({ onSelectAgent }: OfficeProps) {
           ))}
         </div>
 
-        <div className="grid grid-cols-6 gap-x-1 mx-auto">
+        <div className="grid grid-cols-7 gap-x-1 mx-auto">
           {OFFICE_ROW_2.map((name, i) => {
             const meta = AGENT_MAP[name];
             const status = agents[name];
             return (
-              <AgentDesk key={name} agent={meta} status={status} index={i + 6} onSelect={onSelectAgent} />
+              <AgentDesk key={name} agent={meta} status={status} index={i + 7} onSelect={onSelectAgent} />
+            );
+          })}
+        </div>
+
+        <div className="flex justify-center gap-0.5">
+          {Array.from({ length: 16 }).map((_, i) => (
+            <div key={i} className="w-0.5 h-0.5 rounded-full bg-zinc-800" />
+          ))}
+        </div>
+
+        <div className="grid grid-cols-7 gap-x-1 mx-auto">
+          {OFFICE_ROW_3.map((name, i) => {
+            const meta = AGENT_MAP[name];
+            const status = agents[name];
+            return (
+              <AgentDesk key={name} agent={meta} status={status} index={i + 14} onSelect={onSelectAgent} />
             );
           })}
         </div>
