@@ -6,19 +6,30 @@ struct NorchBarView: View {
 
     private let notchGap: CGFloat = 170
 
+    private var activeAgents: [AgentInfo] {
+        AgentInfo.all.filter { state.state(for: $0.id) == .working }
+    }
+
     var body: some View {
         GeometryReader { geo in
             HStack(spacing: 0) {
                 Spacer()
 
                 HStack(spacing: 0) {
-                    agentGroup(AgentInfo.leftRow)
-                        .padding(.horizontal, 8)
+                    let active = activeAgents
+                    if !active.isEmpty {
+                        let mid = active.count / 2
+                        let left = Array(active.prefix(max(mid, 1)))
+                        let right = Array(active.suffix(from: max(mid, 1)))
 
-                    Spacer().frame(width: notchGap)
+                        agentGroup(left)
+                            .padding(.horizontal, 8)
 
-                    agentGroup(AgentInfo.rightRow)
-                        .padding(.horizontal, 8)
+                        Spacer().frame(width: notchGap)
+
+                        agentGroup(right)
+                            .padding(.horizontal, 8)
+                    }
                 }
                 .frame(maxHeight: .infinity)
                 .background(
@@ -26,7 +37,6 @@ struct NorchBarView: View {
                         .fill(Color.black)
                 )
                 .onTapGesture {
-                    // 클릭 시 확장 패널 열기
                     NotificationCenter.default.post(name: .norchToggleExpand, object: nil)
                 }
 
@@ -35,39 +45,30 @@ struct NorchBarView: View {
         }
         .onHover { hovered = $0 }
         .animation(.spring(response: 0.3, dampingFraction: 0.8), value: hovered)
+        .animation(.easeInOut(duration: 0.25), value: activeAgents.map(\.id))
     }
 
     @ViewBuilder
     func agentGroup(_ agents: [AgentInfo]) -> some View {
-        HStack(spacing: hovered ? 3 : -4) {
-            if hovered {
-                ForEach(agents) { a in
-                    sprite(a)
-                }
-            } else {
-                let sentinel = agents.first { state.state(for: $0.id) == .working } ?? agents.first!
-                sprite(sentinel)
+        HStack(spacing: 3) {
+            ForEach(agents) { a in
+                sprite(a)
             }
         }
     }
 
     @ViewBuilder
     func sprite(_ agent: AgentInfo) -> some View {
-        let isWorking = state.state(for: agent.id) == .working
-
         VStack(spacing: 1) {
-            if isWorking {
-                Circle()
-                    .fill(agent.color)
-                    .frame(width: 4, height: 4)
-                    .shadow(color: agent.color, radius: 3)
-            }
+            Circle()
+                .fill(agent.color)
+                .frame(width: 4, height: 4)
+                .shadow(color: agent.color, radius: 3)
             AgentImage(id: agent.id)
                 .frame(width: 26, height: 26)
-                .opacity(isWorking ? 1 : (state.sessionActive ? 0.7 : 0.4))
-                .saturation(isWorking ? 1 : 0.5)
-                .offset(y: isWorking ? -2 : 0)
+                .offset(y: -2)
         }
+        .transition(.scale.combined(with: .opacity))
     }
 }
 

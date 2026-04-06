@@ -23,20 +23,12 @@ struct AgentInfo: Identifiable {
         AgentInfo(id: "iron", name: "Iron", role: "화면", color: Color(hex: 0xd946ef)),
         AgentInfo(id: "rowan", name: "Rowan", role: "모션", color: Color(hex: 0xa3e635)),
         AgentInfo(id: "derek", name: "Derek", role: "모바일", color: Color(hex: 0x22d3ee)),
-        AgentInfo(id: "hugg", name: "Hugg", role: "AI리서치", color: Color(hex: 0xfbbf24)),
-        AgentInfo(id: "jo", name: "Jo", role: "AI구현", color: Color(hex: 0x818cf8)),
-        AgentInfo(id: "teacher", name: "Teacher", role: "교육", color: Color(hex: 0x8b5cf6)),
         AgentInfo(id: "progress", name: "Progress", role: "진행도", color: Color(hex: 0x06b6d4)),
-        AgentInfo(id: "figma", name: "Figma", role: "피그마", color: Color(hex: 0xf472b6)),
     ]
 
-    static let row1 = Array(all.prefix(7))
-    static let row2 = Array(all.dropFirst(7).prefix(7))
-    static let row3 = Array(all.suffix(7))
-
     // Menu bar layout: split around notch
-    static let leftRow = Array(all.prefix(10))
-    static let rightRow = Array(all.suffix(11))
+    static let leftRow = Array(all.prefix(9))
+    static let rightRow = Array(all.suffix(8))
 }
 
 enum AgentState: String {
